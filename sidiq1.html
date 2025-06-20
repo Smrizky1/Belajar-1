@@ -1,100 +1,226 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Halo Dunia!</title>
-  <style>
-    body {
-      text-align: center;
-      font-family: sans-serif;
-      padding-top: 100px;
-      background-color: #f0f8ff;
-    }
-    h1 {
-      color: #007acc;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #007acc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #005fa3;
-    }
-  </style>
-</head>
-<body>
-  <h1>Halo Dunia!</h1>
-  <p>Ini website pertamaku di GitHub Pages!</p>
-  <button onclick="alert('Terima kasih sudah mengklik!')">Klik saya</button>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Website dengan Menu Navigasi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diandra's Fried Chicken</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f0f8ff;
+    /* Reset & dasar */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-    /* Styling navbar */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* Navbar */
     nav {
-      background-color: #007acc;
-      padding: 10px 20px;
+      background-color: #d84315; /* oranye kemerahan */
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      font-family: 'Brush Script MT', cursive;
+      cursor: default;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #bf360c;
+    }
+    /* Hero Section */
+    header {
+      background: url('https://images.unsplash.com/photo-1604908177525-30d48470c7f1?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      height: 400px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+      font-size: 2.8rem;
+      font-weight: 700;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: background-color 0.3s;
+    /* Produk Section */
+    section.produk {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    nav a:hover {
-      background-color: #005f99;
-    }
-    /* Konten halaman */
-    .content {
+    section.produk h2 {
       text-align: center;
-      padding: 100px 20px;
+      margin-bottom: 40px;
+      color: #d84315;
+      font-size: 2rem;
+      letter-spacing: 1.5px;
     }
-    button {
-      background-color: #007acc;
-      color: white;
-      border: none;
-      padding: 10px 25px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+    .produk-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 25px;
     }
-    button:hover {
-      background-color: #005f99;
+    .produk-item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .produk-item:hover {
+      transform: translateY(-5px);
+    }
+    .produk-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 3px solid #d84315;
+    }
+    .produk-info {
+      padding: 15px 20px;
+    }
+    .produk-info h3 {
+      margin-bottom: 10px;
+      color: #bf360c;
+    }
+    .produk-info p {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      color: #555;
+    }
+    .produk-info .harga {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #d84315;
+    }
+    /* Kontak Section */
+    section.kontak {
+      background-color: #d84315;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    section.kontak h2 {
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+    section.kontak p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+    section.kontak a {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #bf360c;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+    section.kontak a:hover {
+      background-color: #8c1d00;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background-color: #f3e5e0;
+      color: #7a4a42;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      header {
+        font-size: 2rem;
+        height: 280px;
+      }
     }
   </style>
 </head>
 <body>
+
   <nav>
-    <a href="#home">Beranda</a>
-    <a href="#about">Tentang</a>
-    <a href="#services">Layanan</a>
-    <a href="#contact">Kontak</a>
+    <div class="logo">Diandra's Fried Chicken</div>
+    <ul>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
   </nav>
 
-  <div class="content">
-    <h1>Halo Dunia!</h1>
-    <p>Ini website dengan menu navigasi sederhana.</p>
-    <button onclick="alert('Terima kasih sudah mengklik!')">Klik saya</button>
-  </div>
+  <header>
+    Nikmati Ayam Goreng Renyah & Lezat di Setiap Gigitan!
+  </header>
+
+  <section id="produk" class="produk">
+    <h2>Produk Kami</h2>
+    <div class="produk-list">
+
+      <div class="produk-item">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="Ayam Goreng Original" />
+        <div class="produk-info">
+          <h3>Ayam Goreng Original</h3>
+          <p>Ayam goreng dengan bumbu rahasia khas Diandra’s, renyah dan gurih.</p>
+          <div class="harga">Rp25.000 / potong</div>
+        </div>
+      </div>
+
+      <div class="produk-item">
+        <img src="https://images.unsplash.com/photo-1617191511157-91f3c7b4e0a3?auto=format&fit=crop&w=600&q=80" alt="Ayam Goreng Pedas" />
+        <div class="produk-info">
+          <h3>Ayam Goreng Pedas</h3>
+          <p>Rasakan sensasi pedas menggigit yang bikin nagih.</p>
+          <div class="harga">Rp27.000 / potong</div>
+        </div>
+      </div>
+
+      <div class="produk-item">
+        <img src="https://images.unsplash.com/photo-1600628425985-4f37e646f76c?auto=format&fit=crop&w=600&q=80" alt="Ayam Goreng Krispi" />
+        <div class="produk-info">
+          <h3>Ayam Goreng Krispi</h3>
+          <p>Lapisan tepung krispi yang gurih dan renyah di luar.</p>
+          <div class="harga">Rp28.000 / potong</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="kontak" class="kontak">
+    <h2>Pesan Sekarang!</h2>
+    <p>Hubungi kami melalui WhatsApp atau telepon:</p>
+    <p>📞 <strong>+62 812-3456-7890</strong></p>
+    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">Chat WhatsApp</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Diandra's Fried Chicken. Semua hak cipta dilindungi.
+  </footer>
+
 </body>
 </html>
